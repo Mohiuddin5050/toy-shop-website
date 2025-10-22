@@ -1,6 +1,7 @@
 import React from 'react';
-import Navbar from '../../component/Navbar/Navbar';
+
 import { Outlet } from 'react-router';
+import Navbar from '../component/Navbar/Navbar';
 
 const HomeLayout = () => {
     return (
@@ -8,7 +9,7 @@ const HomeLayout = () => {
             <header>
                 <Navbar/>
             </header>
-            <main>
+            <main className='container mx-auto'>
                 <Outlet/>
             </main>
             <footer>

@@ -1,0 +1,74 @@
+[
+  {
+    "toyId": 1,
+    "toyName": "Lego Classic Bricks",
+    "sellerName": "Toys R Us Local",
+    "sellerEmail": "contact@toysruslocal.com",
+    "price": 49.99,
+    "rating": 4.7,
+    "availableQuantity": 75,
+    "description": "A timeless set of colorful Lego bricks.",
+    "pictureURL": "https://i.ibb.co/example1.png",
+    "subCategory": "Building Blocks"
+  },
+  {
+    "toyId": 2,
+    "toyName": "Rainbow Puzzle",
+    "sellerName": "Happy Toys",
+    "sellerEmail": "hello@happytoys.com",
+    "price": 19.5,
+    "rating": 4.2,
+    "availableQuantity": 40,
+    "description": "A colorful wooden puzzle for toddlers.",
+    "pictureURL": "https://i.ibb.co/example2.png",
+    "subCategory": "Puzzles"
+  },
+  {
+    "toyId": 3,
+    "toyName": "Remote Truck",
+    "sellerName": "City Toys",
+    "sellerEmail": "sales@citytoys.com",
+    "price": 39.99,
+    "rating": 4.5,
+    "availableQuantity": 30,
+    "description": "Durable remote-control truck for ages 6+.",
+    "pictureURL": "https://i.ibb.co/example3.png",
+    "subCategory": "Vehicles"
+  },
+  {
+    "toyId": 4,
+    "toyName": "Stuffed Bear",
+    "sellerName": "Cuddle Corner",
+    "sellerEmail": "support@cuddlecorner.com",
+    "price": 14.0,
+    "rating": 4.9,
+    "availableQuantity": 150,
+    "description": "Soft and cute stuffed bear.",
+    "pictureURL": "https://i.ibb.co/example4.png",
+    "subCategory": "Stuffed"
+  },
+  {
+    "toyId": 5,
+    "toyName": "Art Kit",
+    "sellerName": "Little Artists",
+    "sellerEmail": "info@littleartists.com",
+    "price": 24.99,
+    "rating": 4.6,
+    "availableQuantity": 60,
+    "description": "Complete art kit for creative kids.",
+    "pictureURL": "https://i.ibb.co/example5.png",
+    "subCategory": "Art & Craft"
+  },
+  {
+    "toyId": 6,
+    "toyName": "Musical Piano",
+    "sellerName": "TuneToys",
+    "sellerEmail": "contact@tunetoys.com",
+    "price": 59.99,
+    "rating": 4.3,
+    "availableQuantity": 20,
+    "description": "Mini piano with multiple tones and lights.",
+    "pictureURL": "https://i.ibb.co/example6.png",
+    "subCategory": "Musical"
+  }
+]

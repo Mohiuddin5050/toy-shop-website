@@ -50,36 +50,7 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal gap-4 px-1">{navLinks}</ul>
                 </div>
 
-                {/* <div className="navbar-end">
-          {user ? (
-            <div className="flex items-center gap-3">
-              <div
-                className="tooltip tooltip-bottom"
-                data-tip={user?.displayName || "User"}
-              >
-                <img
-                  src={user?.photoURL || "https://i.ibb.co/2WcvbV3/default-user.png"}
-                  alt="user"
-                  className="w-10 h-10 rounded-full border-2 border-purple-400"
-                />
-              </div>
-              <button
-                onClick={handleLogout}
-                className="btn btn-sm bg-purple-600 text-white hover:bg-purple-700"
-              >
-                Logout
-              </button>
-            </div>
-          ) : (
-            <Link
-              to="/login"
-              className="btn btn-sm bg-purple-600 text-white hover:bg-purple-700"
-            >
-              Login
-            </Link>
-          )}
-        </div> */}
-
+                
                 <Link
                     to="/login"
                     className="btn btn-sm bg-purple-600 text-white hover:bg-purple-700"
