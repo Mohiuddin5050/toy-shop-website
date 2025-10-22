@@ -6,19 +6,21 @@ import HomeLayout from "../Layouts/HomeLayout";
 
 const router = createBrowserRouter([
     {
-        path:'/',
-        element:<HomeLayout/>,
-        children:[
+        path: '/',
+        element: <HomeLayout />,
+        children: [
             {
                 index: true,
-                element:<HomePage/>
-            }
+                element: <HomePage />,
+
+            },
+            {
+                path: '/login',
+                element: <Login />,
+            },
         ]
     },
-    {
-        path:'/login',
-        element:<Login/>,
-    },
+
 ])
 
 
