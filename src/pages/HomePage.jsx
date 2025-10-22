@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import slider1Img from '../assets/slider1.jpg'
 import slider2Img from '../assets/slider2.jpg'
 import slider3Img from '../assets/slider3.jpg'
 import slider4Img from '../assets/slider4.jpg'
+import { Link } from 'react-router';
+import { FaStar } from 'react-icons/fa';
 
 const HomePage = () => {
+
+    const [toys, setToys] = useState([]);
+
+    useEffect(() => {
+        fetch("/toys.json")
+            .then((res) => res.json())
+            .then((data) => setToys(data));
+    }, []);
+
     return (
         <div className=''>
             <div className="carousel w-full py-5">
@@ -46,7 +57,58 @@ const HomePage = () => {
                 </div>
             </div>
             <div>
-                
+                <section>
+        <h2 className="text-2xl font-bold text-center text-purple-700 mb-6">
+          Popular Toys
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {toys.map((toy) => (
+            <div
+              key={toy.toyId}
+              className="card bg-base-100 shadow-md border border-gray-100 hover:shadow-xl transition-all"
+            >
+              <figure>
+                <img
+                  src={toy.pictureURL}
+                  alt={toy.toyName}
+                  className="h-56 w-full object-cover"
+                />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">{toy.toyName}</h2>
+                <p className="text-gray-600 text-sm">
+                  Seller: <span className="font-medium">{toy.sellerName}</span>
+                </p>
+                <p className="text-gray-600 text-sm">
+                  Category: {toy.subCategory}
+                </p>
+                <p className="font-semibold text-purple-700">
+                  ${toy.price.toFixed(2)}
+                </p>
+                <p className="text-sm text-gray-500">
+                  Available: {toy.availableQuantity} pcs
+                </p>
+                <div className="flex items-center text-yellow-500 gap-1">
+                  {[...Array(Math.round(toy.rating))].map((_, i) => (
+                    <FaStar key={i} />
+                  ))}
+                  <span className="text-sm text-gray-600 ml-1">
+                    ({toy.rating})
+                  </span>
+                </div>
+                <div className="card-actions justify-end mt-3">
+                  <Link to={`/toy/${toy.toyId}`}>
+                    <button className="btn btn-sm bg-purple-600 text-white hover:bg-purple-700">
+                      View More
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
             </div>
         </div>
     );

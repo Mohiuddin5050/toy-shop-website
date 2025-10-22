@@ -4,6 +4,7 @@ import Login from "../pages/Login";
 import HomePage from "../pages/HomePage";
 import HomeLayout from "../Layouts/HomeLayout";
 
+
 const router = createBrowserRouter([
     {
         path: '/',
@@ -18,8 +19,10 @@ const router = createBrowserRouter([
                 path: '/login',
                 element: <Login />,
             },
+            
         ]
     },
+
 
 ])
 

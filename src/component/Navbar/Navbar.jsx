@@ -51,6 +51,7 @@ const Navbar = () => {
                 </div>
 
                 
+
                 <Link
                     to="/login"
                     className="btn btn-sm bg-purple-600 text-white hover:bg-purple-700"
