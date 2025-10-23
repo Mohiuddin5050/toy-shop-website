@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
+import { AuthContext } from '../../provider/AuthProvider';
 
 const Navbar = () => {
+    const { user, logOut } = use(AuthContext);
+    const handleLogout = () => {
+        logOut()
+            .then(() => console.log("Logged out"))
+            .catch((error) => console.error(error));
+    }
     const navLinks = (
         <>
             <li>
@@ -50,44 +57,36 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal gap-4 px-1">{navLinks}</ul>
                 </div>
 
-                {/* <div className="navbar-end">
-          {user ? (
-            <div className="flex items-center gap-3">
-              <div
-                className="tooltip tooltip-bottom"
-                data-tip={user?.displayName || "User"}
-              >
-                <img
-                  src={user?.photoURL || "https://i.ibb.co/2WcvbV3/default-user.png"}
-                  alt="user"
-                  className="w-10 h-10 rounded-full border-2 border-purple-400"
-                />
-              </div>
-              <button
-                onClick={handleLogout}
-                className="btn btn-sm bg-purple-600 text-white hover:bg-purple-700"
-              >
-                Logout
-              </button>
+                <div className="navbar-end">
+                    {user ? (
+                        <div className="flex items-center gap-3">
+                            <div
+                                className="tooltip tooltip-bottom"
+                                data-tip={user?.displayName || "User"}
+                            >
+                                <img
+                                    src={user?.photoURL || "https://i.ibb.co/2WcvbV3/default-user.png"}
+                                    alt="user"
+                                    className="w-10 h-10 rounded-full border-2 border-purple-400"
+                                />
+                            </div>
+                            <button
+                                onClick={handleLogout}
+                                className="btn btn-sm bg-purple-600 text-white hover:bg-purple-700"
+                            >
+                                Logout
+                            </button>
+                        </div>
+                    ) : (
+                        <Link
+                            to="/login"
+                            className="btn btn-sm bg-purple-600 text-white hover:bg-purple-700"
+                        >
+                            Login
+                        </Link>
+                    )}
+                </div>
             </div>
-          ) : (
-            <Link
-              to="/login"
-              className="btn btn-sm bg-purple-600 text-white hover:bg-purple-700"
-            >
-              Login
-            </Link>
-          )}
-        </div> */}
-
-                <Link
-                    to="/login"
-                    className="btn btn-sm bg-purple-600 text-white hover:bg-purple-700"
-                >
-                    Login
-                </Link>
-            </div>
-
 
             <div className="md:hidden bg-white border-t">
                 <ul className="flex justify-center gap-4 py-2">{navLinks}</ul>

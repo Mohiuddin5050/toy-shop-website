@@ -1,19 +1,43 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React, { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router';
+import { AuthContext } from '../provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Login = () => {
+    const { signIn } = useContext(AuthContext);
+    const [email, setEmail] = useState("");
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || "/";
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+        signIn(email, password)
+            .then(() => {
+                toast.success("Login successful!");
+                navigate(from, { replace: true });
+            })
+            .catch((err) => toast.error(err.message));
+    }
     return (
         <div className='flex justify-center items-center min-h-screen'>
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                <div className="card-body">
-                    <h2 className='text-center font-semibold text-2xl pb-5'>Login your account</h2>
+                <h2 className='text-center font-semibold text-2xl pb-5'>Login your account</h2>
+                <form onSubmit={handleLogin} className="card-body">
                     <fieldset className="fieldset">
                         <label className="label">Email</label>
-                        <input type="email" className="input" placeholder="Email" />
+                        <input name='email' type="email" className="input" placeholder="Email" value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required />
+
+
                         <label className="label">Password</label>
-                        <input type="password" className="input" placeholder="Password" />
+                        <input name='password' type="password" className="input" placeholder="Password" required />
+                        
                         <div><a className="link link-hover">Forgot password?</a></div>
-                        <button className="btn btn-neutral mt-4">Login</button>
+                        <button type='submit' className="btn btn-neutral mt-4">Login</button>
                         <button type="button"
                             // onClick={handleGoogle}
                             className="btn btn-outline mt-3 w-full">
@@ -21,7 +45,7 @@ const Login = () => {
                         </button>
                         <p className='text-center text-accent py-5'>Dont’t Have An Account ? <Link className='text-secondary' to='/register'>Register</Link></p>
                     </fieldset>
-                </div>
+                </form>
             </div>
         </div>
     );
