@@ -19,12 +19,13 @@ const ToyDetails = () => {
             });
     }, [toyId]);
 
-    const handleTryNow = () => {
-        toast.success(`You are trying ${toy.toyName}!`, {
-            position: "top-center",
-            autoClose: 2000,
-        });
-    };
+    const handleTryNow = (e) => {
+    e.preventDefault();
+    toast.success(`You successfully tried ${toy.toyName}!`, {
+      position: "top-center",
+      autoClose: 2000,
+    });
+  };
 
     if (!toy) {
         return (
@@ -83,14 +84,31 @@ const ToyDetails = () => {
                         </span>
                     </div>
 
-                    <div className="card-actions justify-center mt-5">
-                        <button
-                            onClick={handleTryNow}
-                            className="btn bg-purple-600 hover:bg-purple-700 text-white"
-                        >
-                            Try Now
-                        </button>
-                    </div>
+                    <form onSubmit={handleTryNow} className="mt-8 space-y-3">
+        <h3 className="text-lg font-semibold text-purple-700">
+          Try Now Form
+        </h3>
+
+        <input
+          type="text"
+        //   value={name}
+        //   readOnly
+          placeholder="Your Name"
+          className="input input-bordered w-full"
+        />
+        <input
+          type="email"
+        //   value={email}
+        //   readOnly
+          placeholder="Your Email"
+          className="input input-bordered w-full"
+        />
+
+        <button className="btn bg-purple-600 text-white w-full">
+          Try Now
+        </button>
+      </form>
+
                 </div>
             </div>
             <ToastContainer />
