@@ -14,6 +14,11 @@ const Login = () => {
                         <input type="password" className="input" placeholder="Password" />
                         <div><a className="link link-hover">Forgot password?</a></div>
                         <button className="btn btn-neutral mt-4">Login</button>
+                        <button type="button"
+                            // onClick={handleGoogle}
+                            className="btn btn-outline mt-3 w-full">
+                            Login with Google
+                        </button>
                         <p className='text-center text-accent py-5'>Dont’t Have An Account ? <Link className='text-secondary' to='/register'>Register</Link></p>
                     </fieldset>
                 </div>
