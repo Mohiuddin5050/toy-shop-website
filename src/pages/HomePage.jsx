@@ -72,7 +72,7 @@ const HomePage = () => {
                 <img
                   src={toy.pictureURL}
                   alt={toy.toyName}
-                  className="h-56 w-full object-cover"
+                  className="h-72 w-full object-cover p-5"
                 />
               </figure>
               <div className="card-body">
@@ -97,7 +97,7 @@ const HomePage = () => {
                     ({toy.rating})
                   </span>
                 </div>
-                <div className="card-actions justify-end mt-3">
+                <div className="card-actions justify-center mt-3">
                   <Link to={`/toy/${toy.toyId}`}>
                     <button className="btn btn-sm bg-purple-600 text-white hover:bg-purple-700">
                       View More

@@ -3,7 +3,7 @@ import { createBrowserRouter } from "react-router";
 import Login from "../pages/Login";
 import HomePage from "../pages/HomePage";
 import HomeLayout from "../Layouts/HomeLayout";
-
+import ToyDetails from "../pages/ToyDetails";
 
 const router = createBrowserRouter([
     {
@@ -19,7 +19,10 @@ const router = createBrowserRouter([
                 path: '/login',
                 element: <Login />,
             },
-            
+            {
+                path: '/toy/:toyId',
+                element: <ToyDetails />
+            },
         ]
     },
 
