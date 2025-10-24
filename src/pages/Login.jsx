@@ -1,12 +1,13 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../provider/AuthProvider';
 import { toast } from 'react-toastify';
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext);
+    const { signIn, googleLogin } = useContext(AuthContext);
     const [email, setEmail] = useState("");
     const navigate = useNavigate();
+    const location = useLocation();
     const from = location.state?.from?.pathname || "/";
     const handleLogin = (e) => {
         e.preventDefault();
@@ -20,7 +21,17 @@ const Login = () => {
                 navigate(from, { replace: true });
             })
             .catch((err) => toast.error(err.message));
-    }
+    };
+
+    const handleGoogle = () => {
+            googleLogin()
+                .then((result) => {
+                    const user = result.user;
+                    toast.success(`Welcome, ${user.displayName}!`);
+                    navigate("/");
+                })
+                .catch((err) => toast.error(err.message));
+            }
     return (
         <div className='flex justify-center items-center min-h-screen'>
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -35,11 +46,11 @@ const Login = () => {
 
                         <label className="label">Password</label>
                         <input name='password' type="password" className="input" placeholder="Password" required />
-                        
+
                         <div><a className="link link-hover">Forgot password?</a></div>
                         <button type='submit' className="btn btn-neutral mt-4">Login</button>
                         <button type="button"
-                            // onClick={handleGoogle}
+                            onClick={handleGoogle}
                             className="btn btn-outline mt-3 w-full">
                             Login with Google
                         </button>

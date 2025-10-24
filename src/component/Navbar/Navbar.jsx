@@ -1,9 +1,9 @@
-import React, { use } from 'react';
+import React, {  useContext } from 'react';
 import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../../provider/AuthProvider';
 
 const Navbar = () => {
-    const { user, logOut } = use(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     const handleLogout = () => {
         logOut()
             .then(() => console.log("Logged out"))
@@ -49,7 +49,7 @@ const Navbar = () => {
             <div className="navbar container mx-auto">
                 <div className="navbar-start">
                     <Link to="/" className="text-2xl font-bold text-purple-600">
-                        SKTOYSHOP
+                        SKToyShop
                     </Link>
                 </div>
 

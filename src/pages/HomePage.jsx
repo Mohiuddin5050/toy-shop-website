@@ -5,6 +5,8 @@ import slider3Img from '../assets/slider3.jpg'
 import slider4Img from '../assets/slider4.jpg'
 import { Link } from 'react-router';
 import { FaStar } from 'react-icons/fa';
+import CustomerReviews from './CustomerReviews';
+import Offers from './Offers';
 
 const HomePage = () => {
 
@@ -17,7 +19,7 @@ const HomePage = () => {
     }, []);
 
     return (
-        <div className=''>
+        <div className='mb-10'>
             <div className="carousel w-full py-5">
                 <div id="slide1" className="carousel-item relative w-full h-96 object-cover">
                     <img
@@ -57,8 +59,8 @@ const HomePage = () => {
                 </div>
             </div>
             <div>
-                <section>
-        <h2 className="text-2xl font-bold text-center text-purple-700 mb-6">
+                <section className='bg-pink-50 mb-5 pb-10'>
+        <h2 className="text-3xl font-bold text-center text-purple-700 mb-6 pt-5">
           Popular Toys
         </h2>
 
@@ -109,6 +111,8 @@ const HomePage = () => {
           ))}
         </div>
       </section>
+      <CustomerReviews/>
+      <Offers/>
             </div>
         </div>
     );
