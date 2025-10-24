@@ -1,4 +1,4 @@
-import React, {  useContext } from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../../provider/AuthProvider';
 
@@ -23,12 +23,12 @@ const Navbar = () => {
             </li>
             <li>
                 <NavLink
-                    to="/extra"
+                    to="/my-orders"
                     className={({ isActive }) =>
                         isActive ? "text-purple-600 font-semibold" : "hover:text-purple-500"
                     }
                 >
-                    Extra
+                    My Orders
                 </NavLink>
             </li>
             <li>
@@ -65,8 +65,9 @@ const Navbar = () => {
                                 data-tip={user?.displayName || "User"}
                             >
                                 <img
-                                    src={user?.photoURL || "https://i.ibb.co/2WcvbV3/default-user.png"}
+                                    src={user?.photoURL}
                                     alt="user"
+                                    referrerpolicy="no-referrer"
                                     className="w-10 h-10 rounded-full border-2 border-purple-400"
                                 />
                             </div>

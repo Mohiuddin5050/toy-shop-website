@@ -19,7 +19,7 @@ const CustomerReviews = () => {
     },
     {
       id: 3,
-      name: "Amina Akter",
+      name: "Rakibul Islam",
       comment: "Loved the variety of educational toys available here!",
       rating: 5,
       photo: "https://i.ibb.co/9k4754rq/272801597-104388965506031-8598903033390602351-n.jpg"

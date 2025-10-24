@@ -91,15 +91,13 @@ const ToyDetails = () => {
 
         <input
           type="text"
-        //   value={name}
-        //   readOnly
+        
           placeholder="Your Name"
           className="input input-bordered w-full"
         />
         <input
           type="email"
-        //   value={email}
-        //   readOnly
+        
           placeholder="Your Email"
           className="input input-bordered w-full"
         />

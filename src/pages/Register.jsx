@@ -3,9 +3,11 @@ import { Link, useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../provider/AuthProvider';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import useTitle from '../hooks/useTitle';
 
 const Register = () => {
-    const { createUser, updateUser, googleLogin } = useContext(AuthContext)
+    useTitle("Register")
+    const { createUser, updateUser, googleLogin,setUser } = useContext(AuthContext)
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
 
@@ -16,18 +18,19 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         const photo = form.photo.value;
-        console.log({ name, email, password, photo });
+        // console.log({ name, email, password, photo });
         if (!/(?=.*[A-Z])(?=.*[a-z]).{6,}/.test(password)) {
             toast.error("Password must have uppercase, lowercase and min 6 chars");
             return;
         }
         createUser(email, password)
-            .then(() => {
-                // const user=result.user;
+            .then((result) => {
+                const user=result.user;
                 updateUser(name, photo);
+                setUser({ ...user, displayName: name, photoURL: photo });
                 toast.success("Registration successful!");
                 navigate("/");
-                // console.log(user);
+                console.log(user);
             })
             .catch((err) => toast.error(err.message));
     };

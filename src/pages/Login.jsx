@@ -2,8 +2,10 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../provider/AuthProvider';
 import { toast } from 'react-toastify';
+import useTitle from '../hooks/useTitle';
 
 const Login = () => {
+    useTitle("Login")
     const { signIn, googleLogin } = useContext(AuthContext);
     const [email, setEmail] = useState("");
     const navigate = useNavigate();
@@ -14,7 +16,7 @@ const Login = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        // console.log(email, password);
         signIn(email, password)
             .then(() => {
                 toast.success("Login successful!");
@@ -24,14 +26,14 @@ const Login = () => {
     };
 
     const handleGoogle = () => {
-            googleLogin()
-                .then((result) => {
-                    const user = result.user;
-                    toast.success(`Welcome, ${user.displayName}!`);
-                    navigate("/");
-                })
-                .catch((err) => toast.error(err.message));
-            }
+        googleLogin()
+            .then((result) => {
+                const user = result.user;
+                toast.success(`Welcome, ${user.displayName}!`);
+                navigate("/");
+            })
+            .catch((err) => toast.error(err.message));
+    }
     return (
         <div className='flex justify-center items-center min-h-screen'>
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -47,7 +49,12 @@ const Login = () => {
                         <label className="label">Password</label>
                         <input name='password' type="password" className="input" placeholder="Password" required />
 
-                        <div><a className="link link-hover">Forgot password?</a></div>
+                        <p className="text-sm text-purple-600 mt-1">
+                            <Link to="/forget-password" state={{ email }}>
+                                Forget Password?
+                            </Link>
+                        </p>
+
                         <button type='submit' className="btn btn-neutral mt-4">Login</button>
                         <button type="button"
                             onClick={handleGoogle}
