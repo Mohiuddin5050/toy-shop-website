@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import useTitle from '../hooks/useTitle';
 import { AuthContext } from '../provider/AuthProvider';
 import { toast } from 'react-toastify';
-import { updateProfile } from 'firebase/auth';
+import { getAuth, updateProfile } from 'firebase/auth';
 
 const MyProfile = () => {
     useTitle('My Profile');
@@ -10,6 +10,8 @@ const MyProfile = () => {
     const { user, setUser } = useContext(AuthContext);
     const [name, setName] = useState('');
     const [photo, setPhoto] = useState('');
+
+    const auth = getAuth();
 
     useEffect(() => {
         if (user) {
@@ -26,7 +28,7 @@ const MyProfile = () => {
             return;
         }
 
-        updateProfile(user, { displayName: name, photoURL: photo })
+        updateProfile(auth.currentUser, { displayName: name, photoURL: photo })
             .then(() => {
                 setUser({ ...user, displayName: name, photoURL: photo });
                 toast.success("Profile updated successfully!");
@@ -44,7 +46,7 @@ const MyProfile = () => {
 
                 <div className="flex flex-col items-center mb-6">
                     <img
-                        src={photo || "https://i.ibb.co/2WcvbV3/default-user.png"}
+                        src={photo}
                         alt="User"
                         className="w-24 h-24 rounded-full border-4 border-purple-400 mb-3"
                     />

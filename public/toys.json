@@ -61,14 +61,14 @@
   },
   {
     "toyId": 6,
-    "toyName": "Musical Piano",
+    "toyName": "Teddy Bear",
     "sellerName": "TuneToys",
     "sellerEmail": "contact@tunetoys.com",
     "price": 59.99,
     "rating": 4.3,
     "availableQuantity": 20,
-    "description": "Mini piano with multiple tones and lights.",
-    "pictureURL": "https://i.ibb.co/4wC7Zpf8/zumpe-buntebart.jpg",
-    "subCategory": "Musical"
+    "description": "Soft and cuddly teddy bear — the perfect snuggle buddy for kids!.",
+    "pictureURL": "https://i.ibb.co/FkGwKm4b/teddy-cute-smiley-love.jpg",
+    "subCategory": "Teddy Bear"
   }
 ]

@@ -1,8 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-import slider1Img from '../assets/slider1.jpg'
-import slider2Img from '../assets/slider2.jpg'
-import slider3Img from '../assets/slider3.jpg'
-import slider4Img from '../assets/slider4.jpg'
 import { Link } from 'react-router';
 import { FaStar } from 'react-icons/fa';
 import CustomerReviews from './CustomerReviews';
@@ -10,11 +6,20 @@ import Offers from './Offers';
 import { AuthContext } from '../provider/AuthProvider';
 import useTitle from '../hooks/useTitle';
 import Loading from './Loading';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const HomePage = () => {
 useTitle("Home")
   const [toys, setToys,] = useState([]);
   const {loading, setLoading}=useContext(AuthContext);
+   useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true, 
+    });
+  }, []);
+
   useEffect(() => {
     setLoading(true)
     fetch("/toys.json")
@@ -30,36 +35,36 @@ useTitle("Home")
   return (
     <div className='mb-10'>
       <div className="carousel w-full py-5">
-        <div id="slide1" className="carousel-item relative w-full h-96 object-cover">
+        <div id="slide1" className="carousel-item relative w-full h-96 object-cover" data-aos="fade-up">
           <img
-            src={slider1Img}
+            src={"https://i.ibb.co/F44pPvpm/a9ch-k0ta-170624.jpg"}
             className="w-full" />
           <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
             <a href="#slide4" className="btn btn-circle">❮</a>
             <a href="#slide2" className="btn btn-circle">❯</a>
           </div>
         </div>
-        <div id="slide2" className="carousel-item relative w-full h-96 object-cover">
+        <div id="slide2" className="carousel-item relative w-full h-96 object-cover" data-aos="fade-up">
           <img
-            src={slider2Img}
+            src={"https://i.ibb.co/q3bkhPLf/many-colorful-toys-collection-on-the-desk-generative-ai-photo.jpg"}
             className="w-full" />
           <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
             <a href="#slide1" className="btn btn-circle">❮</a>
             <a href="#slide3" className="btn btn-circle">❯</a>
           </div>
         </div>
-        <div id="slide3" className="carousel-item relative w-full h-96 object-cover">
+        <div id="slide3" className="carousel-item relative w-full h-96 object-cover" data-aos="fade-up">
           <img
-            src={slider3Img}
+            src={"https://i.ibb.co/Pv2nt3pC/0ce27aaca629ac2ca2defeba51efe8e2.jpg"}
             className="w-full" />
           <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
             <a href="#slide2" className="btn btn-circle">❮</a>
             <a href="#slide4" className="btn btn-circle">❯</a>
           </div>
         </div>
-        <div id="slide4" className="carousel-item relative w-full h-96 object-cover">
+        <div id="slide4" className="carousel-item relative w-full h-96 object-cover" data-aos="fade-up">
           <img
-            src={slider4Img}
+            src={"https://i.ibb.co/SX0dYczd/slider2.jpg"}
             className="w-full" />
           <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
             <a href="#slide3" className="btn btn-circle">❮</a>
@@ -83,7 +88,7 @@ useTitle("Home")
                   <img
                     src={toy.pictureURL}
                     alt={toy.toyName}
-                    className="h-72 w-full object-cover p-5"
+                    className="h-72 w-full object-cover p-5" data-aos="zoom-in"
                   />
                 </figure>
                 <div className="card-body">
