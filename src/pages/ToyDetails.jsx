@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaStar } from "react-icons/fa";
+import Loading from "./Loading";
 
 const ToyDetails = () => {
     const { toyId } = useParams();
@@ -20,19 +21,15 @@ const ToyDetails = () => {
     }, [toyId]);
 
     const handleTryNow = (e) => {
-    e.preventDefault();
-    toast.success(`You successfully tried ${toy.toyName}!`, {
-      position: "top-center",
-      autoClose: 2000,
-    });
-  };
+        e.preventDefault();
+        toast.success(`You successfully tried ${toy.toyName}!`, {
+            position: "top-center",
+            autoClose: 2000,
+        });
+    };
 
     if (!toy) {
-        return (
-            <div className="text-center py-20 text-lg font-semibold text-purple-600">
-                Loading toy details...
-            </div>
-        );
+        return <Loading />
     }
 
     return (
@@ -85,27 +82,27 @@ const ToyDetails = () => {
                     </div>
 
                     <form onSubmit={handleTryNow} className="mt-8 space-y-3">
-        <h3 className="text-lg font-semibold text-purple-700">
-          Try Now Form
-        </h3>
+                        <h3 className="text-lg font-semibold text-purple-700">
+                            Try Now Form
+                        </h3>
 
-        <input
-          type="text"
-        
-          placeholder="Your Name"
-          className="input input-bordered w-full"
-        />
-        <input
-          type="email"
-        
-          placeholder="Your Email"
-          className="input input-bordered w-full"
-        />
+                        <input
+                            type="text"
 
-        <button className="btn bg-purple-600 text-white w-full">
-          Try Now
-        </button>
-      </form>
+                            placeholder="Your Name"
+                            className="input input-bordered w-full"
+                        />
+                        <input
+                            type="email"
+
+                            placeholder="Your Email"
+                            className="input input-bordered w-full"
+                        />
+
+                        <button className="btn bg-purple-600 text-white w-full">
+                            Try Now
+                        </button>
+                    </form>
 
                 </div>
             </div>

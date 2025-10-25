@@ -47,7 +47,7 @@ A vibrant and playful online marketplace for kids' toys, encouraging families to
 
 ### 📦 NPM Packages Used
 ```bash
-npm install react-router-dom
+npm install react-router
 npm install firebase
 npm install react-toastify
 npm install aos
