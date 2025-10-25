@@ -9,7 +9,7 @@ A vibrant and playful online marketplace for kids' toys, encouraging families to
 ---
 
 ### 🌐 Live URL
-🔗 [Live Site](https://your-live-site-link.netlify.app)
+🔗 [Live Site](https://sk-toy-shop.web.app/)
 
 ---
 
@@ -54,16 +54,16 @@ npm install aos
 npm install swiper
 npm install daisyui
 npm install tailwindcss
-
+```
 ---
 
-🧑‍💻 Developer Info
+### 🧑‍💻 Developer Info
 
 👨‍💻 Developed by: Mohiuddin
 💼 Role: Junior Web Developer
 
 ---
 
-💖 Thank You for Visiting My Project!
+### 💖 Thank You for Visiting My Project!
 
-"Play • Learn • Grow — Bringing smiles, one toy at a time!"
+**"Play • Learn • Grow — Bringing smiles, one toy at a time!"**
