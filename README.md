@@ -1,16 +1,69 @@
-# React + Vite
+### 🧸 Project Name
+SKToyShop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+### 📖 Project purpose
+A vibrant and playful online marketplace for kids' toys, encouraging families to discover and support local toy sellers.. Users can log in, browse toys, view detailed info, and leave feedback or ratings for toys they want to buy for their kids.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+### 🌐 Live URL
+🔗 [Live Site](https://your-live-site-link.netlify.app)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+### 🚀 Key Features
+- 🔐 **User Authentication (Firebase):**
+  - Register new users with name & photo upload  
+  - Login / Logout functionality  
+  - Forget Password option with Gmail redirect  
+- 🧸 **Dynamic Toy Listings:**  
+  - Toys loaded dynamically from a JSON file or database  
+  - Category and rating display  
+- ⭐ **Customer Reviews:**  
+  - Users can rate and comment on toys  
+- 👤 **My Profile Page:**  
+  - Instantly view and update name & profile picture  
+- 🎠 **Animated Homepage:**  
+  - Beautiful slider and scroll animations  
+  - Swiper Slider & AOS Animation integration  
+- ⏳ **Loading Spinner:**  
+  - Smooth loading experience when fetching data  
+- 📱 **Responsive Design:**  
+  - Fully optimized for mobile, tablet, and desktop
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+### ⚙️ Technologies Used
+- React.js – Frontend framework
+- Firebase – Authentication & hosting
+- Tailwind CSS + DaisyUI – UI styling
+- React Router – Routing
+- React Toastify – Notifications
+- AOS Animation – Scroll animations
+
+---
+
+### 📦 NPM Packages Used
+```bash
+npm install react-router-dom
+npm install firebase
+npm install react-toastify
+npm install aos
+npm install swiper
+npm install daisyui
+npm install tailwindcss
+
+---
+
+🧑‍💻 Developer Info
+
+👨‍💻 Developed by: Mohiuddin
+💼 Role: Junior Web Developer
+
+---
+
+💖 Thank You for Visiting My Project!
+
+"Play • Learn • Grow — Bringing smiles, one toy at a time!"
