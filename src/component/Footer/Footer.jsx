@@ -19,12 +19,7 @@ const Footer = () => {
         
         <div className="flex flex-col space-y-2">
           <h3 className="text-xl font-semibold mb-2 text-pink-300">Quick Links</h3>
-          <Link to="/terms" className="hover:text-pink-400 transition-colors">
-            Terms & Conditions
-          </Link>
-          <Link to="/privacy" className="hover:text-pink-400 transition-colors">
-            Privacy Policy
-          </Link>
+          
           <Link to="/about" className="hover:text-pink-400 transition-colors">
             About Us
           </Link>

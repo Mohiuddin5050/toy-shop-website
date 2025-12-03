@@ -10,64 +10,69 @@ import ErrorPage from "../pages/ErrorPage";
 import MyProfile from "../pages/MyProfile";
 import MyOrders from "../pages/MyOrders";
 import ForgetPassword from "../pages/ForgetPassword";
+import AllItems from "../pages/AllItems";
+import AboutUs from "../pages/AboutUs";
+import ContactUs from "../pages/ContactUs";
 
 const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <HomeLayout />,
-        children: [
-            {
-                index: true,
-                element: <HomePage />,
-
-            },
-            {
-                path: 'login',
-                element: <Login />,
-            },
-            {
-                path: 'register',
-                element: <Register />,
-            },
-            {
-                path: 'toy/:toyId',
-                element: (
-                    <PrivetRoute>
-                        <ToyDetails />
-                    </PrivetRoute>
-                )
-            },
-            {
-                path: 'my-profile',
-                element: (
-                    <PrivetRoute>
-                        <MyProfile />
-                    </PrivetRoute>
-                )
-            },
-            {
-                path: 'my-orders',
-                element: (
-                    <PrivetRoute>
-                        <MyOrders />
-                    </PrivetRoute>
-                )
-            },
-            {
-                path: 'forget-password',
-                element: <ForgetPassword/>
-            },
-
-        ]
-    },
-    {
-        path: '*',
-        element: <ErrorPage />
-    },
-])
-
-
-
-
+  {
+    path: "/",
+    element: <HomeLayout />,
+    children: [
+      {
+        index: true,
+        element: <HomePage />,
+      },
+      {
+        path: "login",
+        element: <Login />,
+      },
+      {
+        path: "register",
+        element: <Register />,
+      },
+      {
+        path: "toy/:toyId",
+        element: <ToyDetails />,
+      },
+      {
+        path: "my-profile",
+        element: (
+          <PrivetRoute>
+            <MyProfile />
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "my-orders",
+        element: (
+          <PrivetRoute>
+            <MyOrders />
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "forget-password",
+        element: <ForgetPassword />,
+      },
+      {
+        path: "all-items",
+        element: <AllItems />,
+      },
+      {
+        path: "about",
+        element: <AboutUs />,
+      },
+      {
+        path: "contact",
+        element: <ContactUs />,
+      },
+    ],
+  },
+  {
+    path: "*",
+    element: <ErrorPage />,
+  },
+]);
 
 export default router;
